@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Paycheck Analyzer</title>
+
+        <!-- Roboto font embed -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+        <!-- Stylesheets-->
+        <link rel="stylesheet" type="text/css" href="Resources/CSS/style.css">
+    </head>
+
+    <body>
+        <div id="column1">
+            <h2>Income</h2>
+            <!-- Select Box for IRS Filing Status -->
+            <label for="filing">Select Filing Status:</label>
+            <select name="filing" id="filing">
+                <option value="single">Single</option>
+                <option value="married">Married Filing Jointly</option>
+            </select>
+            <br/>
+
+            <label for="taxYear">Select Tax Year:</label>
+            <select name="taxYear" id="taxYear">
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+
+            <!-- Income Input Boxes-->
+            <br/>
+            <label for="income1">Income #1:</label>
+            <input type="number" id="income1" name="income1" value="0">
+            <br/>
+            <label for="income2">Income #2:</label>
+            <input type="number" id="income2" name="income1" value="0">
+            <br/>
+            <label for="payPeriod">Select Pay Frequency:</label>
+            <select name="payPeriod" id="payPeriod">
+                <option value="52">Weekly</option>
+                <option value="26">Bi-Weekly</option>
+                <option value="12">Monthly</option>
+            </select>
+            <br/><br/>
+            
+            <!-- Retirement Percentage Input Boxes -->
+            <h2>Retirement Savings</h2>
+            <h3>Salary 1</h3>
+            <label for="pretaxRetire1">Pretax Retirement %:</label>
+            <input type="number" id="pretaxRetire1" name="pretaxRetire1" value="0">
+            <br/>
+            <label for="aftertaxRetire1">After Tax Retirement Percentage:</label>
+            <input type="number" id="aftertaxRetire1" name="aftertaxRetire1" value="0">
+            <br/><br/>
+            <h3>Salary 2</h3>
+            <label for="pretaxRetire2">Pretax Retirement %:</label>
+            <input type="number" id="pretaxRetire2" name="pretaxRetire2" value="0">
+            <br/>
+            <label for="aftertaxRetire2">After Tax Retirement Percentage:</label>
+            <input type="number" id="aftertaxRetire2" name="aftertaxRetire2" value="0">
+
+            <!-- Pretax Cost Inputs -->
+            <br/><br/> 
+            <h2>Per Paycheck Costs</h2>
+            <h3>Salary 1</h3>
+
+            <!-- Pretax Cost Inputs Salary #1 -->
+            <label for="healthIns1">Salary #1 Health Insurance Cost:</label>
+            <input type="number" id="healthIns1" name="healthIns1" value="0">
+            <br/>
+            <label for="dentIns1">Salary #1 Dental Insurance Cost:</label>
+            <input type="number" id="dentIns1" name="dentIns1" value="0">
+            <br/>
+            <label for="hsa1">Salary #1 HSA Cost:</label>
+            <input type="number" id="hsa1" name="hsa1" value="0">
+
+            <!-- Posttax Cost Inputs Salary #1 -->
+            <br/>
+            <label for="disability1">Salary #1 Disability Cost:</label>
+            <input type="number" id="disability1" name="disability1" value="0">
+            <br/>
+            <label for="life1">Salary #1 Life Insurance Cost:</label>
+            <input type="number" id="life1" name="life1" value="0">
+            <br/>
+            <label for="crit1">Salary #1 Critical Illness Cost:</label>
+            <input type="number" id="crit1" name="crit1" value="0">
+
+            <!-- Withholding Inputs Salary #1-->
+            <br/> 
+            <label for="hold1">Salary #1 Additional Withholding:</label>
+            <input type="number" id="hold1" name="hold1" value="0">
+
+
+            <br/><br/> 
+            <h3>Salary 2</h3>
+
+            <!-- Pretax Cost Inputs Salary #2 -->
+            <label for="healthIns2">Salary #2 Health Insurance Cost:</label>
+            <input type="number" id="healthIns2" name="healthIns2" value="0">
+            <br/>
+            <label for="dentIns2">Salary #2 Dental Insurance Cost:</label>
+            <input type="number" id="dentIns2" name="dentIns2" value="0">
+            <br/>
+            <label for="hsa2">Salary #2 HSA Cost:</label>
+            <input type="number" id="hsa2" name="hsa2" value="0">
+
+            <!-- Posttax Cost Inputs Salary #2 -->
+            <br/>
+            <label for="disability2">Salary #2 Disability Cost:</label>
+            <input type="number" id="disability2" name="disability2" value="0">
+            <br/>
+            <label for="life2">Salary #2 Life Insurance Cost:</label>
+            <input type="number" id="life2" name="life2" value="0">     
+            <br/>
+            <label for="crit2">Salary #2 Critical Illness Cost:</label>
+            <input type="number" id="crit2" name="crit2" value="0"> 
+
+            <!-- Withholding Inputs Salary #2-->
+            <br/>
+            <label for="hold2">Salary #2 Additional Withholding:</label>
+            <input type="number" id="hold2" name="hold2" value="0">
+
+            <!-- Run Paycheck Analysis Button -->
+            <br/><br/>
+            <button type="button" id="paycheckButton">Paycheck Analysis</button>
+        </div>
+
+        <div id="column2">
+           <!-- Monthly Expense Inputs -->
+            <h2>Monthly Expenses</h2>
+            <label for="mortgage">Mortgage/Rent Cost:</label>
+            <input type="number" id="mortgage" name="mortgage" value="0">
+            <br/>
+            <label for="electric">Electric Cost:</label>
+            <input type="number" id="electric" name="electric" value="0">
+            <br/>
+            <label for="internet">Internet Cost:</label>
+            <input type="number" id="internet" name="internet" value="0">
+            <br/>
+            <label for="groceries">Groceries Cost:</label>
+            <input type="number" id="groceries" name="groceries" value="0">
+            <br/>
+            <label for="pet">Pet Costs:</label>
+            <input type="number" id="pet" name="pet" value="0">
+            <br/>
+            <label for="medical">Medical Cost:</label>
+            <input type="number" id="medical" name="medical" value="0">
+            <br/>
+            <label for="personal">Personal Money:</label>
+            <input type="number" id="personal" name="personal" value="0">
+            <br/>
+            <label for="mobile">Mobile Phone Cost:</label>
+            <input type="number" id="mobile" name="mobile" value="0">
+            <br/>
+            <label for="entertainment">Entertainment Cost:</label>
+            <input type="number" id="entertainment" name="entertainment" value="0">
+            <br/>
+            <label for="dining">Dining Out Cost:</label>
+            <input type="number" id="dining" name="dining" value="0">
+            <br/>
+            <label for="grooming">Grooming Cost:</label>
+            <input type="number" id="grooming" name="grooming" value="0">
+            <br/>
+            <label for="gas">Gas/Charging Cost:</label>
+            <input type="number" id="gas" name="gas" value="0">
+            <br/>
+            <label for="student">Student Loan Cost:</label>
+            <input type="number" id="student" name="student" value="0">
+            <br/>
+            <label for="car">Car Payment:</label>
+            <input type="number" id="car" name="car" value="0">
+            <br/>
+            <label for="travel">Travel Cost:</label>
+            <input type="number" id="travel" name="travel" value="0">
+            <br/>
+            <label for="insure">Insurance Cost:</label>
+            <input type="number" id="insure" name="insure" value="0">
+            <br/><br/>
+            <button type="button" id="costButton">Cost Analysis</button>
+        </div>
+
+        <!-- Output Container -->
+        <div>
+            <h2>Results</h2>
+            <div id="results">
+            </div>
+        </div>
+
+        <!-- Javascript Files -->
+        <script src="Resources/JS/main.js"> </script>
+    </body>
+</html>
